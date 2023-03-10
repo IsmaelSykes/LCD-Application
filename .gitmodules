@@ -1,0 +1,3 @@
+[submodule "components/lcd-lib"]
+	path = components/lcd-lib
+	url = git@gitlab.com:ibarrera1/lcd-lib.git
