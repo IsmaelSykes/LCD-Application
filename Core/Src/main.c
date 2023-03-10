@@ -27,7 +27,7 @@
 #include <string.h>
 #include <stdint.h>
 #include "retarget.h"
-//#include "lcd.h"
+#include "lcd.h"
 
 /* USER CODE END Includes */
 
@@ -62,7 +62,7 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-/*
+
 lcd_port_t my_lcd = {
 		.RS.port = GPIOC,
 		.RS.pin = GPIO_PIN_5,
@@ -98,7 +98,7 @@ lcd_port_t my_lcd = {
 		.D7.pin = GPIO_PIN_7,
 		.D7.index = 7,
 };
-*/
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -218,24 +218,24 @@ int main(void)
   RetargetInit(&huart2);
 
   printf("\r LCD project \r\n");
-  //char message[] = {"Buenos dias Ismael"};
-  //char message2[] = {"Como estas?"};
-  //char measure[10];
-  /*
+  char m[] = {"Buenos dias Ismael"};
+  char m2[] = {"Como estas?"};
+  char measure[10];
+
   lcd_init(&my_lcd);
-  placement(&my_lcd,1,3);
-  print(&my_lcd,message,sizeof(message));
-  placement(&my_lcd,2,3);
-  print(&my_lcd,message2,sizeof(message2));
+  place(&my_lcd,1,3);
+  message(&my_lcd,m,sizeof(m));
+  place(&my_lcd,2,3);
+  message(&my_lcd,m2,sizeof(m2));
   HAL_Delay(2000);
 
   clear(&my_lcd);
 
-  placement(&my_lcd,1,0);
-  print_float(measure,sizeof(measure), "%.3f", 258.111);
-  print(&my_lcd,"measure: ",9);
-  print(&my_lcd,measure,8);
-  */
+  place(&my_lcd,1,0);
+  get_number(measure,sizeof(measure), "%.3f", 4.331);
+  message(&my_lcd,"measure: ",9);
+  message(&my_lcd,measure,6);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

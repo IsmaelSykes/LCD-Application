@@ -23,3 +23,5 @@
 "./Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_uart_ex.o"
 "./Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.o"
 "./Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.o"
+"./LCD/lcd.o"
+"./LCD/lcd_LL.o"
